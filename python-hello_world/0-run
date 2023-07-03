@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+# Check if $PYFILE is set
+if [[ -z "$PYFILE" ]]; then
+  echo "Environment variable \$PYFILE is not set."
+  exit 1
+fi
+
+# Check if the file exists
+if [[ ! -f "$PYFILE" ]]; then
+  echo "File $PYFILE does not exist."
+  exit 1
+fi
