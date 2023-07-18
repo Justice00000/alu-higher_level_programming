@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-def complex_delete(a_dictionary, value):
-    for key, val in list(a_dictionary.items()):
-        if val == value:
-            del a_dictionary[key]
-    return a_dictionary
+def safe_print_list(my_list=[], x=0):
+    num_returned = 0
+    for i in range(x):
+        try:
+            print(f"{my_list[i]}", end="")
+            num_returned += 1
+        except IndexError as IE:
+            break
+    print()
+    return num_returned
